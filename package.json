@@ -1,7 +1,6 @@
 {
   "name": "basic-react-webpack-setup",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,8 +12,13 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.5",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "css-loader": "^2.1.0",
+    "html": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
@@ -24,7 +28,20 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.1",
+    "nodemon": "^1.19.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silhouettetechnician/ST.git"
+  },
+  "bugs": {
+    "url": "https://github.com/silhouettetechnician/ST/issues"
+  },
+  "homepage": "https://github.com/silhouettetechnician/ST#readme",
+  "description": ""
 }
