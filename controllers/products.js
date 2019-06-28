@@ -1,11 +1,7 @@
 const Product = require('../models/product')
 
 function indexRoute(req, res){
-  return Product
-    .find()
-    .then(product => res.status(200)
-    .json(product))
-    .catch(err => res.json(err))
+  return Product.find().then(product => res.status(200).json(product)).catch(err => res.json(err))
 }
 
 function createRoute(req, res, next){

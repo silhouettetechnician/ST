@@ -2,10 +2,18 @@ const mongoose = require('mongoose')
 mongoose.Promise = require('bluebird')
 const { dbURI } = require('../config/environment')
 const Product = require('../models/product')
+const User = require('../models/user')
 
 mongoose.connect(dbURI, {useNewUrlParser: true }, (err, db) => {
     db.dropDatabase()
-
+    User.create([
+        {
+          username: 'bobbylocks',
+          email: 'bobbylocks@hotmail.co.uk',
+          password: '21122626Bob',
+          passwordConfirmation: '21122626Bob',
+        }])
+    .then(user => {   
     Product.create([
         {
             name: 'Drury Boxer Shorts',
@@ -32,4 +40,6 @@ mongoose.connect(dbURI, {useNewUrlParser: true }, (err, db) => {
     .then(products => console.log(`${products.length} products created`))
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close())
+})
+
 })

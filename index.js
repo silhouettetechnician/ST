@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 // app.use(express.static(`${__dirname}/dist`))
 
 app.use('/api', router)
-// app.get('/*', (req, res) => res.sendFile('src/index.html', { root: __dirname }))
+app.get('/*', (req, res) => res.sendFile('src/index.html', { root: __dirname }))
 
 app.listen(PORT, () => console.log(`Up and running on port ${PORT}`))
 

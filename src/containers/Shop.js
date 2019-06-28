@@ -1,6 +1,7 @@
 import React from 'react'
-
+import ProductShow from '../components/Shop Page/ProductShow'
 import axios from 'axios';
+
 
 class Shop extends React.Component{
     constructor(props){
@@ -27,6 +28,7 @@ class Shop extends React.Component{
             <div key={product._id}>
                 <h1>{product.name}</h1>
                 <h2>{product.description}</h2>
+                
             </div>
                 )}
             </div>
