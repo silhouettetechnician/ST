@@ -8,6 +8,7 @@ import Nav from '../src/components/common/Nav'
 import Shop from './containers/Shop'
 import Login from './components/auth/login'
 import Register from './components/auth/register'
+import './stylesheets/main.scss'
 class App extends React.Component{
     constructor(){
         super()

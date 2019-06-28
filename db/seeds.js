@@ -6,6 +6,7 @@ const User = require('../models/user')
 
 mongoose.connect(dbURI, {useNewUrlParser: true }, (err, db) => {
     db.dropDatabase()
+
     User.create([
         {
           username: 'bobbylocks',
@@ -13,7 +14,8 @@ mongoose.connect(dbURI, {useNewUrlParser: true }, (err, db) => {
           password: '21122626Bob',
           passwordConfirmation: '21122626Bob',
         }])
-    .then(user => {   
+    .then(user => { 
+          
     Product.create([
         {
             name: 'Drury Boxer Shorts',
