@@ -1,41 +1,41 @@
 import React from 'react'
-import ProductShow from '../components/Shop Page/ProductShow'
-import axios from 'axios';
+// import ProductShow from '../components/Shop Page/ProductShow'
+import axios from 'axios'
 
 
 class Shop extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {}
-    }
+  constructor(props){
+    super(props)
+    this.state = {}
+  }
 
-    componentDidMount(){
-        console.log('component did mount')
-        axios.get('api/products')
-        .then(res => this.setState({ products: res.data }))
-        .catch(err => console.log(err))
-            
-        }
+  componentDidMount(){
+    console.log('component did mount')
+    axios.get('api/products')
+      .then(res => this.setState({ products: res.data }))
+      .catch(err => console.log(err))
 
-    render(){
-        console.log('rendering')
-        if(!this.state.products) return null
-        return(
-            <div>
-            <div>
-                <h1>hello</h1>
-            {this.state.products.map(product =>
+  }
+
+  render(){
+    console.log('rendering')
+    if(!this.state.products) return null
+    return(
+      <div>
+        <div>
+          <h1>hello</h1>
+          {this.state.products.map(product =>
             <div key={product._id}>
-                <h1>{product.name}</h1>
-                <h2>{product.description}</h2>
-                
+              <h1>{product.name}</h1>
+              <h2>{product.description}</h2>
+              <img src={product.image[0]} alt={product.name} className='photo' />
             </div>
-                )}
-            </div>
-            </div>
-            
-        )
-    }
+          )}
+        </div>
+      </div>
+
+    )
+  }
 }
 
 export default Shop

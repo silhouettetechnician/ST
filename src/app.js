@@ -8,7 +8,8 @@ import Nav from '../src/components/common/Nav'
 import Shop from './containers/Shop'
 import Login from './components/auth/login'
 import Register from './components/auth/register'
-import './stylesheets/main.scss'
+import Layout from './components/common/Layout/Layout';
+
 class App extends React.Component{
     constructor(){
         super()
@@ -20,8 +21,8 @@ class App extends React.Component{
 
 render() {
     return(
+        <Layout>
         <Browser>
-        <Nav />
             <Switch>
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
@@ -29,6 +30,7 @@ render() {
             <Route exact path='/' component={Home} />
             </Switch>
         </Browser>
+        </Layout>
     )
     }
 }
