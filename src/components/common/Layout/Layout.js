@@ -3,12 +3,20 @@ import Aux from '../../../HOC/Aux'
 import Navbar from '../Navbar/Navbar'
 import Sidebar from '../Sidebar/Sidebar'
 import classes from './Layout.css'
-
+import { BrowserRouter as Browser, Switch, Route } from 'react-router-dom'
 
 class Layout extends React.Component{
-  state = {
-    sideBarShow: false
+  constructor(){
+    super()
+    this.state = {
+      sideBarShow: false 
+    }
   }
+ locationPath = () => {
+   if(this.props.location === '/'){
+     console.log('home')
+   }
+ }
 
   shouldShowBar = () => {
     this.setState({ sideBarShow: false })
@@ -23,8 +31,12 @@ class Layout extends React.Component{
   render(){
     return(
         <Aux>
+          <Browser>
             <Navbar 
-            drawClicked={this.shouldShowToggle}/>
+            location={this.locationPath}
+            drawClicked={this.shouldShowToggle}
+            pathCheck={this.props.checkPath}
+            />
             <Sidebar
             open={this.state.sideBarShow}
             close={this.shouldShowBar}
@@ -32,6 +44,7 @@ class Layout extends React.Component{
           <main className={classes.Content}>
             {this.props.children}
           </main>
+          </Browser>
         </Aux>
     )
   }

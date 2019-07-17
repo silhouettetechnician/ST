@@ -15,17 +15,21 @@ module.exports = {
 
     rules: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.css$/, loader: 'style-loader!css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]'},
-      { test: /\.s(a|c)ss$/, loader: ['style-loader', 'css-loader', 'sass-loader'] },
-      { test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/, loader: 'file-loader' },
-      // { test: cssRegex,
-      //   exclude: cssModuleRegex,
-      //   use: getStyleLoaders({
-      //     importLoaders: 1,
-      //     modules: true,
-      //     localIndentName: '[name]__[local]__[hash:base64:5]'
+      {
+        test: /\.css$/,
+        use: [
+            {loader: "style-loader"},
+            {loader: "css-loader", 
+            options:{
+              modules:true,
+              localIdentName:'[path][name]__[local]--[hash:base64:5]',
+            },}
+        ],
 
-      //   })}
+        exclude: /node_modules/
+    },
+      { test: /\.s(a|c)ss$/, loader: ['style-loader', 'css-loader', 'sass-loader']}, 
+      { test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/, loader: 'file-loader' },
     ]
   },
   devServer: {

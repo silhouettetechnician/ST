@@ -1,0 +1,7 @@
+@font-face{
+    font-family: title;
+    src: url('./assets/font/ArchivoBlack-Regular.ttf') format('truetype');
+}
+.RML-login-modal-wrap > .RML-facebook-login-button{
+    background-color: black;
+}

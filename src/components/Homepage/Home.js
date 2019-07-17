@@ -1,8 +1,9 @@
 import React from 'react'
+import classes from './Home.css'
 
 const Home = (props) => {
     return ( 
-        <div className='home-layout'></div>
+        <div className={classes.HomeLayout}></div>
      )
 }
  

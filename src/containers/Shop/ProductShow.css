@@ -1,0 +1,16 @@
+
+.Container{
+    width: 900px;
+    height: 800px;
+    background-color: black
+}
+
+.Title{
+    font-size: 25px;
+}
+
+.ImageContainer img{
+    display: block;
+    width: 500px;
+    height: 300px;
+}
